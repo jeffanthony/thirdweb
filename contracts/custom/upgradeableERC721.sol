@@ -13,7 +13,7 @@ ERC721Drop("UpgradeableERC721", "U721", msg.sender, 130, msg.sender) {
 
 	function initialize() external initializer {deployer = msg.sender;}
 
-	function _authorizeUpgrade(address) internal view override onlyOwner{
+	function _authorizeUpgrade(address) internal view override {
 		require(msg.sender == deployer);
 	}
 }
